@@ -51,6 +51,6 @@ All feature values are recoded with four significant digits.
    * *seed*: The seed used to generate random numbers, use 123 (default) to replicate our results
    * *k*: The parameter used to control the missing proportion, 1 by default
    * *bio*: Biomarkers considered in the study, in the paper we use 4, 25, 29
-   * *a*: Four bias-corrected estimator (FI, MSI, IPW, SPE) used to compute the CIs, 'SPE' by default
+   * *a*: Indicates the bias-corrected estimator (FI, MSI, IPW, SPE) used to compute the CIs, 'SPE' by default
    * *misv*: Indicates if the verification model is misspecified, 'FALSE' by default  
 5. The function returns a list that contains the True J, verification proportion for both diseased and healthy groups, CIs computed from packages rocbc and ThresholdROC and CIs computed using our proposed methods.
