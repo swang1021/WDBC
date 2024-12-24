@@ -44,13 +44,13 @@ All feature values are recoded with four significant digits.
 
 **wdbc.ci** is the .R file that contains the R code for our study.
 
-1. To run the code and replicate our results in the paper, first install and load R packages rocbc, ThresholdROC and dplyr.
+1. To run the code and replicate our results in the paper, first install and load R packages *rocbc*, *ThresholdROC* and *dplyr*.
 2. Load dataset 'wdbc.new'.
-3. **jc** contains the true J and cutoff point for all biomarkers, computed using complete data.
+3. Calculate **jc**, which contains the true values of J and cutoff point for all biomarkers using complete data.
 4. **wdbc.ci** is the main function to compute the CIs. It requires 5 arguments:
-   * *seed*: The seed used to generate random numbers, use 123 (default) to replicate our results
-   * *k*: The parameter used to control the missing proportion, 1 by default
-   * *bio*: Biomarkers considered in the study, in the paper we use 4, 25, 29
-   * *a*: Indicates the bias-corrected estimator (FI, MSI, IPW, SPE) used to compute the CIs, 'SPE' by default
-   * *misv*: Indicates if the verification model is misspecified, 'FALSE' by default  
+   * *seed*: A integer specifies the seed used to generate random numbers, use 123 (default) to replicate our results
+   * *k*: A numerical value specifies the parameter used to control the missing proportion, default value is 1.
+   * *bio*: A integer between 3 to 32. It specifies the biomarkers considered in the study, in the paper we use 4, 25, 29.
+   * *a*: Valid inputs are "FI", "MSI", "IPW" and "SPE"(by default). It indicates the bias-corrected estimator used to compute the CIs.
+   * *misv*: Boolean. It indicates if the verification model is misspecified. Default value is FALSE.
 5. The function returns a list that contains the True J, verification proportion for both diseased and healthy groups, CIs computed from packages rocbc and ThresholdROC and CIs computed using our proposed methods.
