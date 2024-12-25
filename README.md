@@ -50,7 +50,7 @@ All feature values are recoded with four significant digits.
 4. **wdbc.ci** is the main function to compute the CIs. It requires 5 arguments:
    * *seed*: A integer that specifies the seed used to generate random numbers. We use 123 (default) in the paper.
    * *k*: A numerical value that specifies the parameter used to control the missing proportion, default value is 1.
-   * *bio*: A integer between 3 to 32. It specifies the biomarkers considered in the study, in the paper we use 4, 25, 29.
+   * *bio*: An integer between 3 to 32. It specifies the biomarkers considered in the study, in the paper we use 4, 25, 29.
    * *a*: Valid inputs are "FI", "MSI", "IPW" and "SPE"(by default). It indicates the bias-corrected estimator used to compute the CIs.
    * *misv*: Boolean. It indicates if the verification model is misspecified. Default value is FALSE.
 5. The function returns a list that contains the True J, verification proportion for both diseased and healthy groups, CIs computed from packages rocbc and ThresholdROC and CIs computed using our proposed methods.
