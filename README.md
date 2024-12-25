@@ -48,7 +48,7 @@ All feature values are recoded with four significant digits.
 2. Load dataset 'wdbc.new'.
 3. Calculate **jc**, which contains the true values of J and cutoff point for all biomarkers using complete data.
 4. **wdbc.ci** is the main function to compute the CIs. It requires 5 arguments:
-   * *seed*: A integer that specifies the seed used to generate random numbers. We use 123 (default) in the paper.
+   * *seed*: An integer that specifies the seed used to generate random numbers. We use 123 (default) in the paper.
    * *k*: A numerical value that specifies the parameter used to control the missing proportion, default value is 1.
    * *bio*: An integer between 3 to 32. It specifies the biomarkers considered in the study, in the paper we use 4, 25, 29.
    * *a*: Valid inputs are "FI", "MSI", "IPW" and "SPE"(by default). It indicates the bias-corrected estimator used to compute the CIs.
