@@ -53,4 +53,4 @@ All feature values are recoded with four significant digits.
    * *bio*: An integer between 3 to 32. It specifies the biomarkers considered in the study, in the paper we use 4, 25, 29.
    * *a*: Valid inputs are "FI", "MSI", "IPW" and "SPE"(by default). It indicates the bias-corrected estimator used to compute the CIs.
    * *misv*: Boolean. It indicates if the verification model is misspecified. Default value is FALSE.
-5. The function returns a list that contains the True J, verification proportion for both diseased and healthy groups, CIs computed from packages rocbc and ThresholdROC and CIs computed using our proposed methods.
+5. The function returns a list that contains the True J, verification proportion for both diseased and healthy groups, 95% CIs computed from packages rocbc and ThresholdROC and 95% CIs computed using our proposed methods.
