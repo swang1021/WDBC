@@ -51,11 +51,11 @@ All feature values are recoded with four significant digits.
 2. Load dataset 'wdbc.new'.
 3. Calculate **jc**, which contains the estimates of J and cutoff point for all biomarkers using complete data.
 4. **wdbc.ci** is the main function to compute the CIs. It requires 5 arguments:
-   * *seed*: An integer that specifies the seed used to generate random numbers. We use 123 (default) in the paper.
-   * *k*: A numerical value that specifies the parameter used to control the missing proportion, default value is 1.
-   * *bio*: An integer between 3 to 32. It specifies the biomarkers considered in the study, in the paper we use 4, 25, 29.
-   * *a*: Valid inputs are "FI", "MSI", "IPW" and "SPE"(by default). It indicates the bias-corrected estimator used to compute the CIs.
-   * *misv*: Boolean. It indicates if the verification model is misspecified. Default value is FALSE.
+   * *seed* : An integer that specifies the seed used to generate random numbers. We use 123 (default) in the paper.
+   * *k* : A numerical value that specifies the parameter used to control the missing proportion, default value is 1.
+   * *bio* : An integer between 3 to 32. It specifies the biomarkers considered in the study, in the paper we use 4, 25, 29.
+   * *a* : Valid inputs are "FI", "MSI", "IPW" and "SPE"(by default). It indicates the bias-corrected estimator used to compute the CIs.
+   * *misv* : Boolean. It indicates if the verification model is misspecified. Default value is FALSE.
 5. The function returns a list that contains the estimates of J, verification proportion for both diseased and healthy groups, 95% CIs computed from packages rocbc and ThresholdROC and 95% CIs computed using our proposed methods.
 
 ## wdbc.AUC.R
@@ -65,10 +65,10 @@ All feature values are recoded with four significant digits.
 1. To run the code and replicate our results in the paper (2), first install and load R packages *rocbc*, *pROC*, *dplyr*, *MASS* and *emplik*.
 2. Load dataset 'wdbc.new'.
 3. Calculate **wdbc_auc**, which contains the estimates of AUCs for all biomarkers using complete data.
-4. **auc_vb_ci** is the main function to compute the CIs. It requires 5 arguments:
-   * *bmk*: An integer selected from 1 to 30. It specifies the biomarkers considered in the study, in the paper we use bmk = 2, 5, 7.
-   * *k*: A numerical value that specifies the parameter used to control the missing proportion, in the paper we use k = 1 or -1.
-   * *a*: An integer selected from 1 to 30. It specifies the biomarkers considered as covariate in the study, in the paper we use a = 6.
-   * *misv*: Boolean. It indicates if the verification model is misspecified. Default value is FALSE.
+4. **auc_vb_ci** is the main function to compute the CIs. It requires 4 arguments:
+   * *bmk* : An integer selected from 1 to 30. It specifies the biomarkers considered in the study, in the paper we use bmk = 2, 5, 7.
+   * *k* : A numerical value that specifies the parameter used to control the missing proportion, in the paper we use k = 1 or -1.
+   * *a* : An integer selected from 1 to 30. It specifies the biomarkers considered as covariate in the study, in the paper we use a = 6.
+   * *misv* : Boolean. It indicates if the verification model is misspecified. Default value is FALSE.
 5. To reproduce our results in the paper, use set.seed(123).
 6. The function returns a list that contains two integrated matrices: *CIs* shows estimated AUC using complete data, verification proportion, numbers of verified diseased and healthy subjects, 95% CIs computed from packages rocbc and pROC and 95% CIs computed using our proposed methods ( with FI, MSI, IPW and SPE estimators). The other matrix *CI_comp* shows their corresponding length and coverage (0 or 1).
