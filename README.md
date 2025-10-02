@@ -2,7 +2,7 @@
 
 This repository provides the R code used in the real data study of papers 
 
-1. Wang S, Shi S, Qin G. Interval estimation for the Youden index of a continuous diagnostic test with verification biased data. Statistical Methods in Medical Research 2025; 34: 796-811. <a href="https://journals.sagepub.com/doi/10.1177/09622802251322989" target="_blank">View the paper</a> 
+1. Wang S, Shi S, Qin G. <a href="https://journals.sagepub.com/doi/10.1177/09622802251322989" target="_blank">Interval estimation for the Youden index of a continuous diagnostic test with verification biased data.</a> Statistical Methods in Medical Research 2025; 34: 796-811. 
 2. Wang S, Shi S, Qin G. Empirical likelihood inference for the area under the ROC curve with verification biased data. (2025, Manuscript Under Review)
 
 ## About WDBC dataset
