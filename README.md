@@ -1,6 +1,9 @@
 # WDBC
 
-This repository provides the R code used in the real data study of paper "Interval Estimation for the Youden Index of a Continuous Diagnostic Test with Verification Biased Data" by Shirui Wang, Shuangfei Shi & Gengsheng Qin (2024).
+This repository provides the R code used in the real data study of papers 
+
+1. Wang S, Shi S, Qin G. Interval estimation for the Youden index of a continuous diagnostic test with verification biased data. Statistical Methods in Medical Research 2025; 34: 796-811. \href{https://journals.sagepub.com/doi/10.1177/09622802251322989}{doi:10.1177/09622802251322989}
+2. Wang S, Shi S, Qin G. Empirical likelihood inference for the area under the ROC curve with verification biased data. (2025, Manuscript Under Review)
 
 ## About WDBC dataset
 
