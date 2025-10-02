@@ -5,6 +5,7 @@ library(MASS)
 library(emplik)
 #library(abind)
 
+#Box-Cox Transformation and Standardization
 bc.scale = function(x) {
   if (any(is.na(x))) stop("Input contains NA values.")
   if (any(x <= 0)) stop("Input not positive.")
@@ -255,3 +256,4 @@ auc_vb_ci = function(bmk,
 set.seed(123)
 
 auc_vb_ci(bmk = 2, k = 1, a = 6, misv = F)
+
