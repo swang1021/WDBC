@@ -1,9 +1,9 @@
 # WDBC
 
-This repository provides the R code used in the real data study of papers 
+This repository provides the R code used in the real data study of 2 papers below:
 
-1. (wdbc.YI.ci) Wang S, Shi S, Qin G. <a href="https://journals.sagepub.com/doi/10.1177/09622802251322989" target="_blank">Interval estimation for the Youden index of a continuous diagnostic test with verification biased data.</a> Statistical Methods in Medical Research 2025; 34: 796-811. 
-2. (wdbc.AUC.ci) Wang S, Shi S, Qin G. Empirical likelihood inference for the area under the ROC curve with verification biased data. (2025, Manuscript Under Review)
+1. (wdbc.YI.R) Wang S, Shi S, Qin G. <a href="https://journals.sagepub.com/doi/10.1177/09622802251322989" target="_blank">Interval estimation for the Youden index of a continuous diagnostic test with verification biased data.</a> Statistical Methods in Medical Research 2025; 34: 796-811. 
+2. (wdbc.AUC.R) Wang S, Shi S, Qin G. Empirical likelihood inference for the area under the ROC curve with verification biased data. (2025, Manuscript Under Review)
 
 ## About WDBC dataset
 
@@ -43,11 +43,11 @@ All feature values are recoded with four significant digits.
 
 **wdbc.new** is a subset of the WDBC dataset that we create to be used in our real data study, with 344 benign subjects and 86 malignant subjects, so the disease prevalence is 0.2. 
 
-## About wdbc.ci file
+## wdbc.YI.R
 
-**wdbc.ci** is the .R file that contains the R code for our study.
+**wdbc.YI.R** is the R code for calculating the confidence intervals for the Youden Index with verification biased data.
 
-1. To run the code and replicate our results in the paper, first install and load R packages *rocbc*, *ThresholdROC* and *dplyr*.
+1. To run the code and replicate our results in the paper (1), first install and load R packages *rocbc*, *ThresholdROC* and *dplyr*.
 2. Load dataset 'wdbc.new'.
 3. Calculate **jc**, which contains the true values of J and cutoff point for all biomarkers using complete data.
 4. **wdbc.ci** is the main function to compute the CIs. It requires 5 arguments:
@@ -57,3 +57,18 @@ All feature values are recoded with four significant digits.
    * *a*: Valid inputs are "FI", "MSI", "IPW" and "SPE"(by default). It indicates the bias-corrected estimator used to compute the CIs.
    * *misv*: Boolean. It indicates if the verification model is misspecified. Default value is FALSE.
 5. The function returns a list that contains the True J, verification proportion for both diseased and healthy groups, 95% CIs computed from packages rocbc and ThresholdROC and 95% CIs computed using our proposed methods.
+
+## wdbc.AUC.R
+
+**wdbc.AUC.R** is the R code for calculating the confidence intervals for the AUC with verification biased data.
+
+1. To run the code and replicate our results in the paper (2), first install and load R packages *rocbc*, *pROC*, *dplyr*, *MASS* and *emplik*.
+2. Load dataset 'wdbc.new'.
+3. Calculate **wdbc_auc**, which contains the estimates of AUCs for all biomarkers using complete data.
+4. **auc_vb_ci** is the main function to compute the CIs. It requires 5 arguments:
+   * *bmk*: An integer selected from 1 to 30. It specifies the biomarkers considered in the study, in the paper we use bmk = 2, 5, 7.
+   * *k*: A numerical value that specifies the parameter used to control the missing proportion, in the paper we use k = 1 or -1.
+   * *a*: An integer selected from 1 to 30. It specifies the biomarkers considered as covariate in the study, in the paper we use a = 6.
+   * *misv*: Boolean. It indicates if the verification model is misspecified. Default value is FALSE.
+5. To reproduce our results in the paper, use set.seed(123).
+6. The function returns a list that contains two integrated matrices: *CIs* shows estimated AUC using complete data, verification proportion, numbers of verified diseased and healthy subjects, 95% CIs computed from packages rocbc and pROC and 95% CIs computed using our proposed methods ( with FI, MSI, IPW and SPE estimators). The other matrix *CI_comp* shows their corresponding length and coverage (0 or 1).
