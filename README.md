@@ -70,5 +70,5 @@ All feature values are recoded with four significant digits.
    * *k* : A numerical value that specifies the parameter used to control the missing proportion, in the paper we use k = 1 or -1.
    * *a* : An integer selected from 1 to 30. It specifies the biomarkers considered as covariate in the study, in the paper we use a = 6.
    * *misv* : Boolean. It indicates if the verification model is misspecified. Default value is FALSE.
-5. To reproduce our results in the paper, use set.seed(123).
+5. To reproduce our results in the paper, use *set.seed(123)*.
 6. The function returns a list that contains two integrated matrices: *CIs* shows estimated AUC using complete data, verification proportion, numbers of verified diseased and healthy subjects, 95% CIs computed from packages rocbc and pROC and 95% CIs computed using our proposed methods ( with FI, MSI, IPW and SPE estimators). The other matrix *CI_comp* shows their corresponding length and coverage (0 or 1).
