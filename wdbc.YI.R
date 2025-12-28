@@ -136,10 +136,10 @@ wdbc.ci = function(seed = 123,
     jm[k, ] = c(spe, sen, sen + spe - 1)
   }
   j = max(jm[, 3])
-  cp = ctest[which.max(jm[, 3]) - 1]
+  cp = ctest[which.max(jm[, 3])]
   #Find Fhat & Ghat 
-  Fhat = jm[which.max(jm[, 3]) - 1, 1]
-  Ghat = 1 - jm[which.max(jm[, 3]) - 1, 2]
+  Fhat = jm[which.max(jm[, 3]), 1]
+  Ghat = 1 - jm[which.max(jm[, 3]), 2]
   Wald.var = Ghat * (1 - Ghat) / sum.wd + Fhat * (1 - Fhat) / sum.wn
   Wald.lb = j - za * sqrt(Wald.var)
   Wald.ub = min(1, j + za * sqrt(Wald.var))
@@ -276,3 +276,4 @@ wdbc.ci = function(seed = 123,
     )
   )
 }
+
